@@ -6,6 +6,10 @@
   // 2) What are the four rules that govern what the 'this keyword' is bound to and describe each?
 
       //Answer
+        // implicit - whatever is to the left . notation.
+        // explicit - using .bind, .call, .apply
+        // new Animal - setting this = Animal
+        // default - window / global
 
   // 3) What is the difference between call and apply?
 
@@ -21,12 +25,20 @@
 //Create an object called user which has the following properties.
   //username --> which is a string
   //email --> which is a string
-  //getUsername --> which is a function that returns the current object's username property. *Don't use 'user' instead use the 'this' keyword*
+  //getUsername --> which is a function that returns the current object's username property. *Don't use 'user' 
+  //instead use the 'this' keyword*
 
     //Code Here
+var user = function(username, email) {
+  this.username = username;
+  this.email = email;
+  this.getUsername = function() {
+    return (this.username);
+  }
 
+}
 //Now, invoke the getUsername method and verify you got the username of the object and not anything else.
-
+getUsername();
 
 //Next Problem
 
